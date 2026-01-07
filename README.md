@@ -22,6 +22,6 @@ DevOps Engineer based in Munich, Germany 🇩🇪
 [Thakur College Of Engineering and Technology](https://www.tcetmumbai.in/)
 
 ## Languages
-🇮🇳 **Hindi, Marathi** (Native)
-🇬🇧 **English**
-🇩🇪 **German** (Conversational)
+- 🇮🇳 **Hindi, Marathi** (Native)
+- 🇬🇧 **English**
+- 🇩🇪 **German** (Conversational)
