@@ -78,6 +78,11 @@ h3 { font-size: 12pt; color: var(--third-color); }
     transform: scale(1.2); /* Slight pop effect */
 }
 
+/* Hide website icon on screen, show only in print */
+.website-icon {
+    display: none;
+}
+
 .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 10pt; }
 
 .job-header { display: flex; justify-content: space-between; align-items: baseline; }
@@ -123,5 +128,14 @@ li { margin-bottom: 4px; }
     .contact-info a::after {
         content: " " attr(title); /* Shows "Email Me", "GitHub Profile" etc. */
         margin-left: 3px;
+    }
+    
+    /* Hide download PDF icon in print, show website icon instead */
+    .download-icon {
+        display: none;
+    }
+    
+    .website-icon {
+        display: inline;
     }
 }
