@@ -23,7 +23,7 @@ body {
 .resume-container {
     background: white;
     width: 210mm; /* A4 Width */
-    min-height: 297mm; /* A4 Height */
+    max-height: 297mm; /* A4 Height - changed from min-height to max-height */
     margin: 0 auto;
     padding: 20mm;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
