@@ -1,6 +1,8 @@
 certificates:
-  - name: "KCNA, CKA, CKAD, Istio, InfluxDB,  HashiCorp Vault Operations Professional, Terraform Associate, AWS Certified Developer – Associate"
+  - name: "KCNA, CKA, CKAD, Istio, InfluxDB,  HashiCorp Vault Operations Professional, Terraform Associate, AWS Certified Developer Associate"
     url: "https://www.credly.com/users/alpana-chaphalkar/badges#credly"
+  - name: "Google Cloud Platform Skills"
+    url: "https://www.skills.google/public_profiles/20a2748c-a458-413f-af44-37d1b0e036f5"
   - name: "GitHub Actions"
     url: "https://learn.microsoft.com/api/credentials/share/en-us/ChaphalkarAlpanaSKY-2237/CC53FB91657726E9?sharingId=211D5A157AD99C14"
   - name: "Certified Jenkins Engineer 2020"
