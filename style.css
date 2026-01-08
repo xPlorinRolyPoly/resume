@@ -89,10 +89,6 @@ h3 { font-size: 12pt; color: var(--third-color); }
     display: none;
 }
 
-.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 10pt; }
-
-.job-header { display: flex; justify-content: space-between; align-items: baseline; }
-
 .job-header-inline {
     display: flex;
     align-items: baseline;
@@ -126,7 +122,9 @@ h3 { font-size: 12pt; color: var(--third-color); }
     font-size: 10pt;
 }
 
-.company { font-style: italic; color: #4b5563; margin-bottom: 5px; }
+.job-entry {
+    margin-bottom: 1.2rem;
+}
 
 ul { margin-left: 1.2rem; font-size: 10.5pt; }
 li { margin-bottom: 4px; }
