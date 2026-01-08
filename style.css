@@ -1,0 +1,82 @@
+:root {
+    --primary-color: #2563eb; /* Professional Blue */
+    --text-color: #1f2937;
+    --border-color: #e5e7eb;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: #f3f4f6; /* Light gray background for screen viewing */
+    padding: 40px 0;
+}
+
+.resume-container {
+    background: white;
+    width: 210mm; /* A4 Width */
+    min-height: 297mm; /* A4 Height */
+    margin: 0 auto;
+    padding: 20mm;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+h1 { font-size: 28pt; color: var(--primary-color); }
+h2 { font-size: 14pt; text-transform: uppercase; border-bottom: 1px solid var(--border-color); margin: 1.5rem 0 0.8rem; padding-bottom: 0.2rem; }
+h3 { font-size: 12pt; }
+
+.subtitle { font-weight: 600; color: #4b5563; }
+.contact-info { display: flex; gap: 15px; flex-wrap: wrap; font-size: 9pt; margin-top: 5px; }
+.contact-info a { text-decoration: none; color: inherit; }
+
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 10pt; }
+
+.job-header { display: flex; justify-content: space-between; align-items: baseline; }
+.company { font-style: italic; color: #4b5563; margin-bottom: 5px; }
+
+ul { margin-left: 1.2rem; font-size: 10.5pt; }
+li { margin-bottom: 4px; }
+
+/* --- PRINT OPTIMIZATIONS --- */
+@media print {
+    body { background: none; padding: 0; }
+    .resume-container {
+        box-shadow: none;
+        margin: 0;
+        width: 100%;
+        padding: 0; /* Let @page handle margins */
+    }
+
+    @page {
+        size: A4;
+        margin: 15mm; /* Professional print margins */
+    }
+
+    /* Prevent breaking a job entry across two pages */
+    .job-entry {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        break-after: avoid; /* Don't leave a header alone at the bottom */
+    }
+
+    a::after {
+        content: " (" attr(href) ")"; /* Show URL for printed version */
+        font-size: 8pt;
+    }
+}
