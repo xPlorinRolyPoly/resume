@@ -15,18 +15,25 @@ jobs:
 
       - name: Install Puppeteer and Dependencies
         run: |
-          npm install puppeteer-cli
+          npm install puppeteer puppeteer-cli
 
       - name: Generate PDF
         run: |
           # We use npx to run puppeteer to 'print' the local html file
           # --printBackground ensures CSS colors/images appear
           npx puppeteer-cli print index.html resume.pdf --printBackground --format A4
+          echo "PDF generation completed"
+          ls -lh resume.pdf || echo "ERROR: resume.pdf not created!"
 
       - name: Commit and Push PDF
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add resume.pdf
-          git commit -m "chore: automated pdf generation" || echo "No changes to commit"
-          git push
+          if [ -f resume.pdf ]; then
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add resume.pdf
+            git diff --staged --quiet || git commit -m "chore: automated pdf generation"
+            git push
+          else
+            echo "resume.pdf not found, skipping commit"
+            exit 1
+          fi
