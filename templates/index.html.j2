@@ -89,7 +89,7 @@
             <h2>Languages</h2>
             <ul class="languages-list">
                 {% for lang in languages %}
-                <li><strong>{{ lang.language }}</strong> ({{ lang.proficiency }})</li>
+                <li><strong>{{ lang.language }}</strong> <span class="date-inline">({{ lang.proficiency }})</span></li>
                 {% endfor %}
             </ul>
         </section>

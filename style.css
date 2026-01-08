@@ -244,6 +244,11 @@ li { margin-bottom: 4px; }
         content: none;
     }
 
+    /* Don't show URLs for company links in print */
+    .company-link::after {
+        content: none;
+    }
+
     .contact-info {
         font-size: 10pt;
     }
