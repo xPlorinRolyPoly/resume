@@ -1,6 +1,7 @@
 :root {
-    --primary-color: #0235a4;
-    --secondary-color: #1c67fc;
+    --primary-color: #02339b;
+    --secondary-color: #020efd;
+    --third-color: #0b70fd;
     --text-color: #1f2937;
     --border-color: #e5e7eb;
 }
@@ -35,8 +36,8 @@ header {
 }
 
 h1 { font-size: 20pt; color: var(--primary-color); }
-h2 { font-size: 14pt; border-bottom: 1px solid var(--border-color); margin: 1.5rem 0 0.8rem; padding-bottom: 0.2rem; }
-h3 { font-size: 12pt; color: var(--secondary-color); }
+h2 { font-size: 14pt; border-bottom: 1px solid var(--border-color); margin: 1.5rem 0 0.8rem; padding-bottom: 0.2rem; color: var(--secondary-color); }
+h3 { font-size: 12pt; color: var(--third-color); }
 
 .subtitle { font-weight: 600; color: #4b5563; }
 .contact-info { display: flex; gap: 15px; flex-wrap: wrap; font-size: 9pt; margin-top: 5px; }
