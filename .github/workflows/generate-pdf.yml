@@ -13,17 +13,42 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Install Puppeteer and Dependencies
+      - name: Install Puppeteer
         run: |
-          npm install puppeteer puppeteer-cli
+          npm install puppeteer
+
+      - name: Create PDF Generation Script
+        run: |
+          cat > generate-pdf.js << 'EOF'
+          const puppeteer = require('puppeteer');
+          const path = require('path');
+          
+          (async () => {
+            const browser = await puppeteer.launch({
+              headless: true,
+              args: ['--no-sandbox', '--disable-setuid-sandbox']
+            });
+            const page = await browser.newPage();
+            
+            const htmlPath = path.resolve(__dirname, 'index.html');
+            await page.goto('file://' + htmlPath, { waitUntil: 'networkidle0' });
+            
+            await page.pdf({
+              path: 'resume.pdf',
+              format: 'A4',
+              printBackground: true,
+              margin: { top: 0, right: 0, bottom: 0, left: 0 }
+            });
+            
+            await browser.close();
+            console.log('PDF generated successfully!');
+          })();
+          EOF
 
       - name: Generate PDF
         run: |
-          # We use npx to run puppeteer to 'print' the local html file
-          # --printBackground ensures CSS colors/images appear
-          npx puppeteer-cli print index.html resume.pdf --printBackground --format A4
-          echo "PDF generation completed"
-          ls -lh resume.pdf || echo "ERROR: resume.pdf not created!"
+          node generate-pdf.js
+          ls -lh resume.pdf
 
       - name: Commit and Push PDF
         run: |
