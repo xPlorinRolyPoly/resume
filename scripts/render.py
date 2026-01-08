@@ -3,7 +3,13 @@ from jinja2 import Environment, FileSystemLoader
 
 # Load Data
 with open('data/experience.yml', 'r') as f:
-    data = yaml.safe_load(f)
+    experience_data = yaml.safe_load(f)
+
+with open('data/certifications.yml', 'r') as f:
+    certifications_data = yaml.safe_load(f)
+
+# Merge all data
+data = {**experience_data, **certifications_data}
 
 # Load Template
 env = Environment(loader=FileSystemLoader('templates'))
