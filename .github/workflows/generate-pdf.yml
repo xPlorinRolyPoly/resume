@@ -1,0 +1,32 @@
+name: Generate Resume PDF
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: # Allows you to run it manually
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to push the PDF back to the repo
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Puppeteer and Dependencies
+        run: |
+          npm install puppeteer-cli
+
+      - name: Generate PDF
+        run: |
+          # We use npx to run puppeteer to 'print' the local html file
+          # --printBackground ensures CSS colors/images appear
+          npx puppeteer-cli print index.html resume.pdf --printBackground --format A4
+
+      - name: Commit and Push PDF
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add resume.pdf
+          git commit -m "chore: automated pdf generation" || echo "No changes to commit"
+          git push
