@@ -35,7 +35,11 @@ body {
     margin-bottom: 1.5rem;
 } */
 
-h1 { font-size: 22pt; color: var(--primary-color); }
+.header-content {
+    text-align: center;
+}
+
+h1 { font-size: 20pt; color: var(--primary-color); }
 h2 { 
     font-size: 14pt; 
     margin: 1.5rem 0 0.8rem; 
@@ -62,6 +66,7 @@ h3 { font-size: 12pt; color: var(--third-color); }
 
 .contact-info {
     display: flex;
+    justify-content: center;
     gap: 25px; /* Space between icons */
     font-size: 1.3rem; /* Larger icons */
     margin-top: 12px;
