@@ -131,6 +131,43 @@ h3 { font-size: 12pt; color: var(--third-color); }
 ul { margin-left: 1.2rem; font-size: 10.5pt; }
 li { margin-bottom: 4px; }
 
+.education-list {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+}
+
+.education-list li {
+    margin-bottom: 10px;
+}
+
+.education-degree {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.education-degree h3 {
+    margin: 0;
+    display: inline;
+}
+
+.education-institution {
+    margin-left: 1rem;
+    margin-top: 2px;
+}
+
+.institution-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 10pt;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.institution-link:hover {
+    color: var(--third-color);
+}
+
 .certifications-list {
     list-style-type: disc;
     margin-left: 1.5rem;

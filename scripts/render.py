@@ -8,8 +8,11 @@ with open('data/experience.yml', 'r') as f:
 with open('data/certifications.yml', 'r') as f:
     certifications_data = yaml.safe_load(f)
 
+with open('data/education.yml', 'r') as f:
+    education_data = yaml.safe_load(f)
+
 # Merge all data
-data = {**experience_data, **certifications_data}
+data = {**experience_data, **certifications_data, **education_data}
 
 # Load Template
 env = Environment(loader=FileSystemLoader('templates'))
