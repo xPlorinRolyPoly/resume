@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #020efd;
-    --secondary-color: #036cfe;
-    --third-color: #01b8eb;
+    --primary-color: #1e3a8a; /* Deep navy blue - for h1 */
+    --secondary-color: #2563eb; /* Professional medium blue - for h2 */
+    --third-color: #3b82f6; /* Bright blue - for h3 */
     --text-color: #1f2937;
     --border-color: #e5e7eb;
 }
@@ -58,7 +58,7 @@ h2::after {
 }
 h3 { font-size: 12pt; color: var(--third-color); }
 
-.subtitle { font-weight: 600; color: #4b5563; }
+.subtitle { font-weight: 600; color: #7c8086; /* Blue-gray that complements the blue palette */ }
 
 .contact-info {
     display: flex;
