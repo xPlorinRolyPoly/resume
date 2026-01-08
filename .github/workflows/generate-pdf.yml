@@ -11,6 +11,7 @@ jobs:
       contents: write # Needed to push the PDF back to the repo
     env:
       PDF_FILENAME: alpana-chaphalkar-resume.pdf
+      HTML_FILENAME: index.html
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -35,15 +36,17 @@ jobs:
           node scripts/generate-pdf.js
           ls -lh ${{ env.PDF_FILENAME }}
 
-      - name: Commit and Push PDF
+      - name: Commit and Push Generated Files
         run: |
-          if [ -f ${{ env.PDF_FILENAME }} ]; then
+          if [ -f ${{ env.PDF_FILENAME }} ] && [ -f ${{ env.HTML_FILENAME }} ]; then
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"
-            git add ${{ env.PDF_FILENAME }}
-            git diff --staged --quiet || git commit -m "chore: automated pdf generation"
+            git add ${{ env.PDF_FILENAME }} ${{ env.HTML_FILENAME }}
+            git diff --staged --quiet || git commit -m "chore: automated pdf and html generation"
             git push
           else
-            echo "${{ env.PDF_FILENAME }} not found, skipping commit"
+            echo "Generated files not found, skipping commit"
+            [ ! -f ${{ env.PDF_FILENAME }} ] && echo "Missing: ${{ env.PDF_FILENAME }}"
+            [ ! -f ${{ env.HTML_FILENAME }} ] && echo "Missing: ${{ env.HTML_FILENAME }}"
             exit 1
           fi
