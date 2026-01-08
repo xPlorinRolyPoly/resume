@@ -44,11 +44,12 @@
             <h2>Professional Experience</h2>
             {% for job in experience %}
             <article class="job-entry">
-                <div class="job-header">
+                <div class="job-header-inline">
                     <h3>{{ job.title }}</h3>
-                    <span class="date">{{ job.period }}</span>
+                    <span class="separator">@</span>
+                    <a href="{{ job.companyUrl }}" target="_blank" class="company-link">{{ job.company }}</a>
+                    <span class="date-inline">({{ job.period }})</span>
                 </div>
-                <p class="company">{{ job.company }}</p>
                 <ul>
                     {% for bullet in job.bullets %}
                     <li>{{ bullet }}</li>

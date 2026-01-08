@@ -1,6 +1,7 @@
 experience:
   - title: "DevOps Engineer"
     company: "Sky Deutschland GmbH"
+    companyUrl: "https://www.sky.de/"
     period: "2021 — Present"
     bullets:
       - "Managed GCP Cloud Infrastructure such as GKE clusters, VMs, Managed Instance Groups, Load Balancers using Terraform and Ansible for seamless operations."
