@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write # Needed to push the PDF back to the repo
+    env:
+      PDF_FILENAME: alpana-chaphalkar-resume.pdf
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -20,17 +22,17 @@ jobs:
       - name: Generate PDF
         run: |
           node generate-pdf.js
-          ls -lh resume.pdf
+          ls -lh ${{ env.PDF_FILENAME }}
 
       - name: Commit and Push PDF
         run: |
-          if [ -f resume.pdf ]; then
+          if [ -f ${{ env.PDF_FILENAME }} ]; then
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"
-            git add resume.pdf
+            git add ${{ env.PDF_FILENAME }}
             git diff --staged --quiet || git commit -m "chore: automated pdf generation"
             git push
           else
-            echo "resume.pdf not found, skipping commit"
+            echo "${{ env.PDF_FILENAME }} not found, skipping commit"
             exit 1
           fi

@@ -12,7 +12,7 @@ const path = require('path');
   await page.goto('file://' + htmlPath, { waitUntil: 'networkidle0' });
   
   await page.pdf({
-    path: 'resume.pdf',
+    path: 'alpana-chaphalkar-resume.pdf',
     format: 'A4',
     printBackground: true,
     preferCSSPageSize: true,
