@@ -23,7 +23,7 @@ body {
 .resume-container {
     background: white;
     width: 210mm; /* A4 Width */
-    max-height: 297mm; /* A4 Height - changed from min-height to max-height */
+    min-height: 297mm; /* A4 Height */
     margin: 0 auto;
     padding: 20mm;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -223,6 +223,12 @@ li { margin-bottom: 4px; }
         page-break-inside: avoid;
         break-inside: avoid;
         margin-bottom: 1rem;
+    }
+
+    /* Prevent breaking sections across pages */
+    section {
+        page-break-inside: avoid;
+        break-inside: avoid;
     }
 
     h2 {
