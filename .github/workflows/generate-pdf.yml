@@ -2,6 +2,11 @@ name: Generate Resume PDF
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - 'README.md'
+      - '.gitignore'
+      - '*.pdf'
+      - '.nojekyll'
   workflow_dispatch: # Allows you to run it manually
 
 jobs:
