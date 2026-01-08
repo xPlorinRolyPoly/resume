@@ -8,11 +8,12 @@ const path = require('path');
   });
   const page = await browser.newPage();
   
-  const htmlPath = path.resolve(__dirname, 'index.html');
+  // Look for index.html in the parent directory (root of repo)
+  const htmlPath = path.resolve(__dirname, '..', 'index.html');
   await page.goto('file://' + htmlPath, { waitUntil: 'networkidle0' });
   
   await page.pdf({
-    path: 'alpana-chaphalkar-resume.pdf',
+    path: path.resolve(__dirname, '..', 'alpana-chaphalkar-resume.pdf'),
     format: 'A4',
     printBackground: true,
     preferCSSPageSize: true,
