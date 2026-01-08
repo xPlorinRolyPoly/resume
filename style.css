@@ -178,14 +178,29 @@ li { margin-bottom: 4px; }
 }
 
 .certifications-list a {
-    color: var(--secondary-color);
+    color: var(--text-color);
     text-decoration: none;
+    font-size: 10pt;
     font-weight: 500;
     transition: color 0.2s;
 }
 
 .certifications-list a:hover {
     color: var(--third-color);
+}
+
+.languages-list {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+}
+
+.languages-list li {
+    margin-bottom: 6px;
+    font-size: 10.5pt;
+}
+
+.languages-list strong {
+    color: var(--text-color);
 }
 
 /* --- PRINT OPTIMIZATIONS --- */
@@ -200,7 +215,7 @@ li { margin-bottom: 4px; }
 
     @page {
         size: A4;
-        margin: 15mm; /* Professional print margins */
+        margin: 10mm; /* Reduced print margins for more content space */
     }
 
     /* Prevent breaking a job entry across two pages */
@@ -221,6 +236,11 @@ li { margin-bottom: 4px; }
 
     /* Don't show URLs for certification links in print */
     .certifications-list a::after {
+        content: none;
+    }
+
+    /* Don't show URLs for education institution links in print */
+    .education-list a::after {
         content: none;
     }
 
