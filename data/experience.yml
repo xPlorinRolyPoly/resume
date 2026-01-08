@@ -1,0 +1,11 @@
+experience:
+  - title: "DevOps Engineer"
+    company: "Sky Deutschland GmbH"
+    period: "2021 — Present"
+    bullets:
+      - "Managed GCP Cloud Infrastructure such as GKE clusters, VMs, Managed Instance Groups, Load Balancers using Terraform and Ansible for seamless operations."
+      - "Automated CI/CD processes with Jenkins and GitHub actions to enhance efficiency."
+      - "Integrated Infrastructure with HashiCorp Vault for enhanced security measures."
+      - "Automated TLS certificate renewal for apps running on GKE clusters using Cert Manager Helm Chart."
+      - "Hands-on experience on GCP Logging, Monitoring and building of Grafana dashboards."
+      - "Knowledge on Scrum and Scaled Agile Framework (SAFe)."
