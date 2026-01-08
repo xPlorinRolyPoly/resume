@@ -1,6 +1,6 @@
 :root {
     --primary-color: #1e3a8a; /* Deep navy blue - for h1 */
-    --secondary-color: #2563eb; /* Professional medium blue - for h2 */
+    --secondary-color: #004ffa; /* Professional medium blue - for h2 */
     --third-color: #3b82f6; /* Bright blue - for h3 */
     --text-color: #1f2937;
     --border-color: #e5e7eb;
@@ -69,8 +69,8 @@ h3 { font-size: 12pt; color: var(--third-color); }
     display: flex;
     justify-content: center;
     gap: 25px; /* Space between icons */
-    font-size: 1.3rem; /* Larger icons */
-    margin-top: 8px;
+    font-size: 1rem; /* Larger icons */
+    margin-top: 5px;
 }
 
 .contact-info a {
@@ -219,17 +219,17 @@ li { margin-bottom: 4px; }
     }
 
     /* Prevent breaking a job entry across two pages */
-    .job-entry {
+    /* .job-entry {
         page-break-inside: avoid;
         break-inside: avoid;
         margin-bottom: 1rem;
-    }
+    } */
 
     /* Prevent breaking sections across pages */
-    section {
+    /* section {
         page-break-inside: avoid;
         break-inside: avoid;
-    }
+    } */
 
     h2 {
         break-after: avoid; /* Don't leave a header alone at the bottom */
