@@ -52,7 +52,7 @@
                     <h3>{{ job.title }}</h3>
                     <span class="separator">@</span>
                     <a href="{{ job.companyUrl }}" target="_blank" class="company-link">{{ job.company }}</a>
-                    <span class="date-inline">({{ job.period }})</span>
+                    <span class="date-inline">({{ job.period }} at {{ job.location }})</span>
                 </div>
                 <ul>
                     {% for bullet in job.bullets %}
