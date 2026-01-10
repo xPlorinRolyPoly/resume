@@ -40,9 +40,9 @@ body {
     margin-bottom: 1rem;
 }
 
-h1 { font-size: 18pt; color: var(--primary-color); margin-bottom: 0.3rem; }
+h1 { font-size: 20pt; color: var(--primary-color); margin-bottom: 0.3rem; }
 h2 { 
-    font-size: 12pt; 
+    font-size: 14pt; 
     margin: 1rem 0 0.6rem; 
     color: var(--secondary-color); 
     display: flex;
@@ -61,7 +61,7 @@ h2::before {
 h2::after {
     margin-left: 1rem;
 }
-h3 { font-size: 11pt; color: var(--third-color); }
+h3 { font-size: 12pt; color: var(--third-color); }
 
 .subtitle { font-weight: 600; color: #7c8086; /* Blue-gray that complements the blue palette */ }
 
