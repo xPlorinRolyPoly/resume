@@ -21,7 +21,7 @@ experience:
     companyUrl: "https://www.sap.com/products/crm.html"
     period: "2018 — 2021"
     bullets:
-      - "Developed and maintained microservices using Java Spring Boot framework, ensuring high performance and scalability."
+      - "Developed and maintained microservices and unit tests using Python and Node.js for ensuring high performance and scalability."
       - "Developed RESTful APIs with Golang and Python and deployed on AWS serverless architecture using Lambda functions."
       - "Managed release pipelines using Jenkins, Ansible and Terraform for automated deployments of SAP Hybris E-Commerce Suite."
       - "Implemented containerization using Docker and orchestrated deployments with Kubernetes on GKE and EKS."
