@@ -82,11 +82,11 @@
 
         <section class="certifications-section">
             <h2>Certifications</h2>
-            <ul class="certifications-list">
+            <div class="certifications-badges">
                 {% for cert in certificates %}
-                <li><a href="{{ cert.url }}" target="_blank">{{ cert.name }}</a></li>
+                <a href="{{ cert.url }}" target="_blank" class="certification-badge">{{ cert.name }}</a>
                 {% endfor %}
-            </ul>
+            </div>
         </section>
         
         <section class="languages-section">
