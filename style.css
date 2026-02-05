@@ -347,7 +347,7 @@ body.dark-mode .certification-badge:hover {
     }
 
     /* Don't show URLs for certification links in print */
-    .certifications-list a::after {
+    .certification-badge::after {
         content: none;
     }
 
