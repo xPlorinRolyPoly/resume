@@ -250,25 +250,44 @@ li { margin-bottom: 4px; }
     color: var(--third-color);
 }
 
-.certifications-list {
-    list-style-type: disc;
-    margin-left: 1.5rem;
+.certifications-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
 }
 
-.certifications-list li {
-    margin-bottom: 6px;
-}
-
-.certifications-list a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 10pt;
-    font-weight: 500;
-    transition: color 0.2s;
-}
-
-.certifications-list a:hover {
+.certification-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: #e0e7ff;
     color: var(--third-color);
+    text-decoration: none;
+    font-size: 9.5pt;
+    font-weight: 600;
+    border-radius: 20px;
+    border: 1.5px solid var(--third-color);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.certification-badge:hover {
+    background-color: var(--third-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+body.dark-mode .certification-badge {
+    background-color: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border-color: #60a5fa;
+}
+
+body.dark-mode .certification-badge:hover {
+    background-color: #60a5fa;
+    color: #1e293b;
+    box-shadow: 0 4px 8px rgba(96, 165, 250, 0.4);
 }
 
 .languages-list {
@@ -328,7 +347,7 @@ li { margin-bottom: 4px; }
     }
 
     /* Don't show URLs for certification links in print */
-    .certifications-list a::after {
+    .certification-badge::after {
         content: none;
     }
 
