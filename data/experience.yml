@@ -15,7 +15,7 @@ experience:
     company: "Sky Deutschland GmbH"
     location: "Munich, Germany 🇩🇪"
     companyUrl: "https://www.sky.de/"
-    period: "2021 — Present"
+    period: "2021 — 2026"
     bullets:
       - "Orchestrated GCP Cloud Infrastructure (GKE, VMs, MIGs) using Terraform and Ansible, ensuring 99.9% uptime and reducing provisioning time by 40%."
       - "Deployed Jenkins and SonarQube on GKE via Helm charts, streamlining CI/CD pipelines and increasing code quality coverage to 85%."
