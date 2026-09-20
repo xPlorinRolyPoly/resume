@@ -1,2 +1,7 @@
 *.md
 !README.md
+
+.venv/
+.agents/
+graphify-out/
+node_modules/
