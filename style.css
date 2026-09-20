@@ -321,24 +321,37 @@ body.dark-mode .certification-badge:hover {
 
     @page {
         size: A4;
-        margin: 10mm; /* Reduced print margins for more content space */
+        margin: 8mm; /* Optimized print margins to guarantee exact 2-page fit */
     }
 
-    /* Prevent breaking a job entry across two pages */
-    /* .job-entry {
-        page-break-inside: avoid;
-        break-inside: avoid;
-        margin-bottom: 1rem;
-    } */
+    body {
+        line-height: 1.38;
+    }
 
-    /* Prevent breaking sections across pages */
-    /* section {
-        page-break-inside: avoid;
-        break-inside: avoid;
-    } */
+    .job-entry {
+        margin-bottom: 0.8rem;
+    }
+
+    ul {
+        font-size: 10pt;
+    }
+
+    li {
+        margin-bottom: 2.5px;
+    }
 
     h2 {
         break-after: avoid; /* Don't leave a header alone at the bottom */
+        margin: 0.65rem 0 0.35rem;
+        font-size: 13pt;
+    }
+
+    .education-list li {
+        margin-bottom: 5px;
+    }
+
+    .languages-list li {
+        margin-bottom: 3px;
     }
 
     a::after {
