@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Post-merge hook:
+# Automatically clean up local branches once their PR is merged (triggered after git pull / merge)
+
+REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
+
+if [ -f "$REPO_ROOT/.githooks/cleanup-merged-branches.sh" ]; then
+    bash "$REPO_ROOT/.githooks/cleanup-merged-branches.sh"
+elif [ -f "$REPO_ROOT/.git/hooks/cleanup-merged-branches.sh" ]; then
+    bash "$REPO_ROOT/.git/hooks/cleanup-merged-branches.sh"
+fi

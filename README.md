@@ -69,21 +69,28 @@ resume/
    npm install puppeteer
    ```
 
-4. **Edit your resume data**
+4. **Enable Git Hooks (recommended)**
+   ```bash
+   git config core.hooksPath .githooks
+   chmod +x .githooks/*
+   ```
+   *Automatically updates Graphify before pushing and deletes local branches once their PR is merged.*
+
+5. **Edit your resume data**
    - Update YAML files in the `data/` directory
    - Modify `templates/index.html.j2` if needed
 
-5. **Generate HTML**
+6. **Generate HTML**
    ```bash
    python scripts/render.py
    ```
 
-6. **Generate PDF (optional)**
+7. **Generate PDF (optional)**
    ```bash
    node scripts/generate-pdf.js
    ```
 
-7. **View locally**
+8. **View locally**
    - Open `index.html` in your browser
 
 ## 📝 Customization

@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+# Pre-push hook:
+# 1. Update graphify knowledge graph before pushing to GitHub
+# 2. Delete local branches whose PRs have been merged
+
+set -e
+
+REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
+
+echo "=================================================="
+echo "[pre-push] Running pre-push checks and updates..."
+echo "=================================================="
+
+# 1. Update graphify
+GRAPHIFY_CMD=""
+if command -v graphify >/dev/null 2>&1; then
+    GRAPHIFY_CMD="graphify"
+elif [ -x "/opt/homebrew/bin/graphify" ]; then
+    GRAPHIFY_CMD="/opt/homebrew/bin/graphify"
+fi
+
+if [ -n "$GRAPHIFY_CMD" ]; then
+    echo "[pre-push] Updating graphify knowledge graph ($GRAPHIFY_CMD update .)..."
+    if "$GRAPHIFY_CMD" update "$REPO_ROOT"; then
+        echo "[pre-push] Graphify updated successfully."
+    else
+        echo "[pre-push] Warning: graphify update encountered an issue, continuing push..."
+    fi
+else
+    echo "[pre-push] Warning: graphify command not found on PATH. Skipping graphify update."
+fi
+
+# 2. Cleanup merged branches
+if [ -f "$REPO_ROOT/.githooks/cleanup-merged-branches.sh" ]; then
+    bash "$REPO_ROOT/.githooks/cleanup-merged-branches.sh"
+elif [ -f "$REPO_ROOT/.git/hooks/cleanup-merged-branches.sh" ]; then
+    bash "$REPO_ROOT/.git/hooks/cleanup-merged-branches.sh"
+fi
+
+echo "[pre-push] Pre-push completed successfully."
+exit 0

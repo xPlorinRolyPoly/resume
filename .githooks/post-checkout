@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Post-checkout hook:
+# Automatically clean up local branches once their PR is merged (triggered when switching branches)
+
+# Args: $1 = prev HEAD, $2 = new HEAD, $3 = flag (1 if branch checkout)
+[ "$3" = "1" ] || exit 0
+
+REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
+
+if [ -f "$REPO_ROOT/.githooks/cleanup-merged-branches.sh" ]; then
+    bash "$REPO_ROOT/.githooks/cleanup-merged-branches.sh"
+elif [ -f "$REPO_ROOT/.git/hooks/cleanup-merged-branches.sh" ]; then
+    bash "$REPO_ROOT/.git/hooks/cleanup-merged-branches.sh"
+fi
