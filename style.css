@@ -36,8 +36,31 @@ body {
 } */
 
 .header-content {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
     margin-bottom: 1rem;
+}
+
+.profile-photo {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2.5px solid var(--third-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    flex-shrink: 0;
+}
+
+.header-text {
+    text-align: center;
+}
+
+/* Hide plain contact text and separators on screen - screen displays clean icons */
+.contact-text,
+.contact-sep {
+    display: none;
 }
 
 h1 { font-size: 20pt; color: var(--primary-color); margin-bottom: 0.3rem; }
@@ -84,8 +107,9 @@ h3 { font-size: 12pt; color: var(--third-color); }
     transform: scale(1.2); /* Slight pop effect */
 }
 
-/* Hide website icon on screen, show only in print */
-.website-icon {
+/* Hide website icon and separator on screen, show only in print */
+.website-icon,
+.website-sep {
     display: none;
 }
 
@@ -374,20 +398,83 @@ body.dark-mode .certification-badge:hover {
         content: none;
     }
 
+    /* ATS & Visual Optimization: Hide profile photo in print/PDF */
+    .profile-photo {
+        display: none !important;
+    }
+
+    .header-content {
+        display: block !important;
+        text-align: center !important;
+        margin-bottom: 0.8rem !important;
+    }
+
+    h1 {
+        font-size: 22pt !important;
+        margin-bottom: 0.2rem !important;
+        color: var(--primary-color) !important;
+    }
+
+    .subtitle {
+        display: block !important;
+        font-size: 11pt !important;
+        font-weight: 600 !important;
+        color: #4b5563 !important;
+        margin-bottom: 0.5rem !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    /* Print Header Contact Info: Elegant single-line row with icons and clean labels */
     .contact-info {
-        font-size: 10pt;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important;
+        gap: 14px !important;
+        font-size: 9pt !important;
+        margin-top: 0 !important;
     }
+
+    .contact-info a {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 5px !important;
+        color: #374151 !important;
+        text-decoration: none !important;
+        font-weight: 500 !important;
+    }
+
+    .contact-info i {
+        display: inline-block !important;
+        color: var(--secondary-color) !important;
+        font-size: 9.5pt !important;
+    }
+
+    .contact-text {
+        display: inline !important;
+    }
+
+    .contact-sep {
+        display: inline !important;
+        color: #9ca3af !important;
+        font-size: 8pt !important;
+    }
+
     .contact-info a::after {
-        content: " " attr(title); /* Shows "Email Me", "GitHub Profile" etc. */
-        margin-left: 3px;
+        content: none !important;
     }
-    
-    /* Hide download PDF icon in print, show website icon instead */
-    .download-icon {
-        display: none;
+
+    .contact-info a.youtube-link,
+    .contact-info a.download-icon,
+    .youtube-sep {
+        display: none !important;
     }
-    
+
     .website-icon {
-        display: inline;
+        display: inline-flex !important;
+    }
+
+    .website-sep {
+        display: inline !important;
     }
 }
