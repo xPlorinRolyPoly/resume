@@ -7,11 +7,11 @@ experience:
     bullets:
       - "Hardened pipeline security by deploying ephemeral self-hosted GitHub Actions runners on on-premise servers (using Ansible and Docker), integrating a custom GCP Cloud Run token-vending machine for short-lived GitHub App tokens and conducting least-privilege IAM service account audits."
       - "Modernized multi-cloud Continuous Delivery (CD) pipelines across GCP and Azure using GitHub Actions and OpenTofu/Terraform with Workload Identity Federation (WIF), eliminating static JSON credentials and automating zero-downtime rolling updates."
-      - "Engineered self-contained, air-gapped distribution bundles with client-controlled AES encryption, automated Docker image archiving, and bootstrap scripts for restricted customer on-premise and Azure edge environments."
+      - "Engineered self-contained, air-gapped distribution bundles with client-controlled AES encryption, automated Docker image archiving, and bootstrap scripts for restricted customer on-premise and Azure environments."
       - "Migrated Cloud SQL PostgreSQL to GCP IAM Database Authentication to eliminate password management, and executed major database version upgrades with near-zero downtime and query planner optimization."
       - "Automated organizational TLS certificate lifecycles using Google Certificate Authority Service (CAS) and Certificate Manager, establishing a shared CA pool that significantly reduced licensing costs."
       - "Standardized GCP Compute Engine MIG update policies and health checks for proactive VM replacement, and configured stateful RabbitMQ MIGs with persistent disk retention across instance recreations."
-      - "Built a hybrid DNS resolution system using BIND9 and AdGuard Home to seamlessly integrate on-premise networks with GCP Cloud DNS over IPsec/BGP VPN connections."
+      - "Built a hybrid DNS resolution system using BIND9 and AdGuard Home to seamlessly integrate on-premise networks with GCP Cloud DNS over IPsec VPN connections."
       - "Reduced Google Cloud Logging spend by implementing Log Router exclusion filters to drop redundant health check logs, and authored in-depth Root Cause Analyses (RCAs) to resolve production microservice and database bottlenecks."
   - title: "DevOps Engineer"
     company: "Sky Deutschland GmbH"
